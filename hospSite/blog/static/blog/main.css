@@ -13,7 +13,7 @@ ul {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #000000;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -82,3 +82,32 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+
+
+.post-image .img{
+  width: 600px;
+  overflow: hidden;
+}
+
+/*----------------footer-----------------*/
+
+.footer-bar {
+  height: 100%;
+  background: rgb(1, 2, 94);
+  position: relative;
+}
+
+.footer-bar .container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-bar .container > div{
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 3rem, 9rem;
+}
+
+/*---------x-------footer---------x--------*/
+

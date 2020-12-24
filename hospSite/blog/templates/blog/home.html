@@ -4,11 +4,19 @@
        <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <span>Post by <i class="fa fa-user" aria-hidden="true"></i> <a class="mr-2" href="#">{{ post.author }}</a></span> | &nbsp; 
+              <i class="fa fa-calendar" aria-hidden="true"></i> <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <div class="container post-image">
+              <div>
+                <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img">
+              </div>  
+            </div>
+
+            
             <p class="article-content">{{ post.content }}</p>
+            <button class="btn post-btn"> Read More &nbsp; <i class="fa fa-arrow-right"></i></button>
           </div>
        </article>
     {% endfor %}

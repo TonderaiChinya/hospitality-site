@@ -13,8 +13,16 @@
                 <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img">
               </div>  
             </div>
+            <form action="{% url 'posts:like-post'%}" method="POST">
+              <input type="hidden" name="post_id" value="{{ post.id }}">
+              {% if user not in post.liked.all %}
+                <button class="btn btn-primary" type="submit">Like</button>
+              {% else %}
+                <button class="btn btn-danger" type="submit">Unlike</button>
+              {% endif %}
+            </form>
+            <strong>{{ post.liked.all.count }} likes</strong>
 
-            
             <p class="article-content">{{ post.content }}</p>
             <button class="btn post-btn"> Read More &nbsp; <i class="fa fa-arrow-right"></i></button>
           </div>

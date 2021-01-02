@@ -36,7 +36,7 @@ def like_post(request):
                 like.value = 'Like'
 
         like.save()
-    return redirect('posts:blog-home')
+    return redirect('blog:blog-home')
 
 # class HomeView(ListView):
 #     model = Post

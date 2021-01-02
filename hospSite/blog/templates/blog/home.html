@@ -13,7 +13,8 @@
                 <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img">
               </div>  
             </div>
-            <form action="{% url 'posts:like-post'%}" method="POST">
+            <form action="{% url 'blog:like-post'%}" method="POST">
+              {% csrf_token %}
               <input type="hidden" name="post_id" value="{{ post.id }}">
               {% if user not in post.liked.all %}
                 <button class="btn btn-primary" type="submit">Like</button>

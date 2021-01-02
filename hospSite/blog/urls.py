@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from .views import like_post
 
-app_name = 'blog-home'
+app_name = 'blog'
 
 urlpatterns = [
     path('', views.home, name='blog-home'),

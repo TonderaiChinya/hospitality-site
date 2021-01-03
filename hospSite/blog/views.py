@@ -23,7 +23,7 @@ def like_post(request):
         post_obj = Post.objects.get(id=post_id)
 
         if user in post_obj.liked.all():
-            post_obj.liked.remove()
+            post_obj.liked.remove(user)
         else:
             post_obj.liked.add(user)
 

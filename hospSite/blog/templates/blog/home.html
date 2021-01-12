@@ -13,15 +13,17 @@
                 <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img">
               </div>  
             </div>
-            <form action="{% url 'blog:like-post'%}" method="POST">
-              {% csrf_token %}
-              <input type="hidden" name="post_id" value="{{ post.id }}">
-              {% if user not in post.liked.all %}
-                <button class="btn btn-primary" type="submit">Like</button>
-              {% else %}
-                <button class="btn btn-danger" type="submit">Unlike</button>
-              {% endif %}
-            </form>
+            {% if user.is_authenticated %}
+              <form action="{% url 'blog:like-post'%}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="post_id" value="{{ post.id }}">
+                {% if user not in post.liked.all %}
+                  <button class="btn btn-primary" type="submit">Like</button>
+                {% else %}
+                  <button class="btn btn-danger" type="submit">Unlike</button>
+                {% endif %}
+              </form>
+            {% endif %}
             <strong>{{ post.liked.all.count }} likes</strong>
 
             <p class="article-content">{{ post.content }}</p>

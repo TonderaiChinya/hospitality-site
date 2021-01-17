@@ -2,6 +2,7 @@ body {
   background: #fafafa;
   color: #333333;
   margin-top: 5rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,6 +15,11 @@ ul {
 
 .bg-steel {
   background-color: #000000;
+}
+
+.site-header .navbar-brand {
+  font-family: 'Tangerine', cursive;
+  font-size: 30px;
 }
 
 .site-header .navbar-nav .nav-link {
